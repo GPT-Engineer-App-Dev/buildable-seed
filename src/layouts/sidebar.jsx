@@ -18,7 +18,7 @@ const Layout = () => {
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <Sidebar />
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b bg-gray-800 text-white px-4 lg:h-[60px] lg:px-6">
           <MobileSidebar />
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
         </header>
@@ -31,12 +31,12 @@ const Layout = () => {
 };
 
 const Sidebar = () => (
-  <div className="hidden border-r bg-muted/40 md:block">
+  <div className="hidden border-r bg-gray-800 text-white md:block">
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold">
           <Package2 className="h-6 w-6" />
-          <span>Acme Inc</span>
+          <span>My Bare-Bones App</span>
         </NavLink>
       </div>
       <div className="flex-1">
@@ -68,7 +68,7 @@ const MobileSidebar = () => (
           className="flex items-center gap-2 text-lg font-semibold mb-4"
         >
           <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <span className="sr-only">My Bare-Bones App</span>
         </NavLink>
         {navItems.map((item) => (
           <SidebarNavLink key={item.to} to={item.to}>
@@ -104,8 +104,8 @@ const SidebarNavLink = ({ to, children }) => (
     to={to}
     className={({ isActive }) =>
       cn(
-        "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary text-muted-foreground",
-        isActive && "text-primary bg-muted",
+        "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary text-white",
+        isActive && "underline",
       )
     }
   >
